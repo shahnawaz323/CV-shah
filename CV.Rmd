@@ -1,17 +1,17 @@
 ---
-name: Bryan
-surname: Jenks
-position: "Information Technology Associate"
-address: "Covered California"
-profilepic: "./img/me.jpg"
-www: "bryanjenks.dev"
-email: "bryan@bryanjenks.dev"
-github: tallguyjenks
-linkedin: bryanjenks
-orcid: 0000-0002-9604-3069
+name: Shah
+surname: Nawaz
+position: "PhD Geomechanics"
+address: "Grenoble, France"
+#profilepic: "./img/me.jpg"
+#www: "bryanjenks.dev"
+email: "shanawaz19@gmail.com"
+github: shahnawaz323
+linkedin: shah-nawaz
+orcid: 0000-0002-0571-1827
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 990000
-aboutme: "I have been writing production software in a variety of languages for over 5 years for various California State Government Agencies. I have a deep driven passion for software, automation, and data Engineering. This very CV was even compiled with code."
+aboutme: "Soil mechanics | Geotech | Discrete element Modelling | Soil Structure Interaction | Transportation Engineering and Planning | Data Science"
 docname: CV
 output: vitae::awesomecv
 ---
@@ -37,6 +37,64 @@ source(file = here("r","data.r"))
 
 ```
 
+# Education
+
+```{r EDUCATION}
+
+edu %>%
+  detailed_entries(
+    with = inst,
+    what = degree,
+    why = detail,
+    when = glue::glue("{startYear} --> {endYear}",.na = ""),
+    where = where
+  )
+
+```
+
+# Research Experience
+
+```{r PROJECTS}
+
+projects %>%
+  detailed_entries(
+    with = area,
+    what = accomplishment,
+    why = detail,
+    when = year,
+    where = where
+  )
+
+```
+
+# Publications
+
+```{r WORKS}
+
+works %>%
+  detailed_entries(
+    with = area,
+    what = accomplishment,
+    when = year,
+    where = where
+  )
+
+```
+
+# Conferences
+
+```{r Conferences}
+
+Conferences %>%
+  detailed_entries(
+    with = area,
+    what = accomplishment,
+    when = year,
+    where = where
+  )
+
+```
+
 # Employment
 
 ```{r EMPLOYMENT}
@@ -52,16 +110,33 @@ work %>%
 
 ```
 
-# Education
 
-```{r EDUCATION}
+# Certifications
 
-edu %>%
+```{r CERTIFICATIONS}
+
+certifications %>%
   detailed_entries(
-    with = inst,
-    what = degree,
+    with = area,
+    what = accomplishment,
     why = detail,
-    when = glue::glue("{startYear} --> {endYear}",.na = ""),
+    when = year,
+    where = where
+  )
+
+```
+
+
+# Scholarships
+
+```{r HONORS}
+
+honors %>%
+  detailed_entries(
+    with = area,
+    what = accomplishment,
+    why = detail,
+    when = year,
     where = where
   )
 
@@ -79,62 +154,13 @@ skills %>%
 
 ```
 
-# Honors
+# Interests and Volunteering
 
-```{r HONORS}
-
-honors %>%
+```{r volunteer}
+volunteer %>%
   detailed_entries(
     with = area,
     what = accomplishment,
-    why = detail,
-    when = year,
-    where = where
-  )
-
-```
-
-# Projects
-
-```{r PROJECTS}
-
-projects %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
-    why = detail,
-    when = year,
-    where = where
-  )
-
-```
-
-# Works
-
-```{r WORKS}
-
-works %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
-    why = detail,
-    when = year,
-    where = where
-  )
-
-```
-
-\pagebreak
-
-# Certifications
-
-```{r CERTIFICATIONS}
-
-certifications %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
-    why = detail,
     when = year,
     where = where
   )
